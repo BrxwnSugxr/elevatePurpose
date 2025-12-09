@@ -1,215 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ElevatePurpose – Discover Islam</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      /* Smooth counter animation */
-      .counter {
-        font-variant-numeric: tabular-nums;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ElevatePurpose — Knowledge that matters. People who care.</title>
+  <meta name="description" content="ElevatePurpose — helping people across Australia discover Islam with clarity, compassion, and community support. Free Qurans, beginner guides, local mosque introductions." />
+  <meta name="keywords" content="Become Muslim Australia, Free Quran, Islam Guide, New Muslims, Shahada Stories, Community Dawah" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="ElevatePurpose — Knowledge that matters. People who care." />
+  <meta property="og:description" content="Helping seekers explore Islam, giving free Qurans, and supporting new Muslims in Australia." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://elevatepurpose.com/" />
+  <meta property="og:image" content="https://elevatepurpose.com/og-image.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ElevatePurpose — Knowledge that matters. People who care." />
+  <meta name="twitter:description" content="Helping seekers explore Islam, giving free Qurans, and supporting new Muslims in Australia." />
+  <meta name="twitter:image" content="https://elevatepurpose.com/og-image.jpg" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --brand: #0f7b47;
+      --warm: #c8a97e;
+      --soft: #fbfbf7;
+    }
+    body { background: var(--soft); color: #0f172a; -webkit-font-smoothing: antialiased; }
+    .counter { font-variant-numeric: tabular-nums; }
+    .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+    .video-wrap iframe { position: absolute; top:0; left:0; width:100%; height:100%; border:0; }
+    .partner-track { display:flex; gap:1rem; align-items:center; padding:0.5rem 0; }
+    .partner-item { min-width:140px; flex:0 0 140px; display:flex; align-items:center; justify-content:center; padding:0.5rem; background:#fff; border-radius:8px; box-shadow:0 1px 4px rgba(15,23,42,0.06); }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .video-placeholder { cursor:pointer; position:relative; display:block; }
+    .video-placeholder img { width:100%; height:auto; display:block; border-radius:8px; }
+    .video-placeholder .play-button { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-size:2rem; color:white; background:rgba(0,0,0,0.4); border:none; border-radius:50%; padding:0.5rem 0.75rem; }
+  </style>
+
+  <!-- JSON-LD Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ElevatePurpose",
+    "url": "https://elevatepurpose.com",
+    "logo": "https://elevatepurpose.com/logo.png",
+    "sameAs": ["https://www.facebook.com/elevatepurpose","https://www.instagram.com/elevatepurpose"],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "elevatepurpose@gmail.com",
+      "contactType": "Customer Service"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I become Muslim?",
+        "acceptedAnswer": { "@type": "Answer", "text": "You can make the declaration of faith (shahada). We guide you privately and support after shahada." }
+      },
+      {
+        "@type": "Question",
+        "name": "Will I be judged?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No — we provide supportive, non-judgemental guidance and respect your privacy." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I request a Quran anonymously?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes — you can request a Quran with only the required information for delivery." }
       }
-    </style>
-  </head>
+    ]
+  }
+  </script>
+</head>
+<body class="antialiased">
 
-  <body class="bg-gray-50 text-gray-800">
-    <!-- NAVBAR -->
-    <nav class="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
-      <div
-        class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center"
-      >
-        <h1 class="text-xl font-bold text-blue-700">ElevatePurpose</h1>
-        <div class="space-x-6 text-sm font-medium">
-          <a href="#about" class="hover:text-blue-600">About</a>
-          <a href="#impact" class="hover:text-blue-600">Impact</a>
-          <a href="#resources" class="hover:text-blue-600">Resources</a>
-          <a href="#contact" class="hover:text-blue-600">Become Muslim</a>
-        </div>
-      </div>
-    </nav>
-
-    <!-- HERO SECTION -->
-    <section
-      class="pt-32 pb-20 bg-gradient-to-b from-blue-600 to-blue-800 text-white text-center"
-    >
-      <h2 class="text-4xl font-bold mb-4">Guiding Hearts. Changing Lives.</h2>
-      <p class="max-w-2xl mx-auto text-lg opacity-90">
-        Sharing the beauty of Islam with sincerity, compassion, and purpose —
-        helping people elevate from darkness to clarity.
-      </p>
-
-      <div class="mt-8">
-        <a
-          href="#contact"
-          class="px-6 py-3 bg-white text-blue-800 font-semibold rounded-lg shadow hover:bg-gray-200"
-        >
-          Become Muslim
-        </a>
-      </div>
-    </section>
-
-    <!-- IMPACT COUNTERS -->
-    <section id="impact" class="py-20 bg-white">
-      <div class="max-w-6xl mx-auto px-4 text-center">
-        <h3 class="text-3xl font-bold mb-10">Our Impact Across Australia</h3>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-          <!-- Shahadas -->
-          <div class="bg-gray-100 p-8 rounded-xl shadow">
-            <p
-              class="text-6xl font-bold text-blue-700 counter"
-              data-target="400"
-            >
-              0
-            </p>
-            <p class="mt-3 text-lg font-semibold">People Accepted Islam</p>
-            <p class="text-sm text-gray-600">Across all states & territories</p>
-          </div>
-
-          <!-- Quran Distribution -->
-          <div class="bg-gray-100 p-8 rounded-xl shadow">
-            <p
-              class="text-6xl font-bold text-blue-700 counter"
-              data-target="40000"
-            >
-              0
-            </p>
-            <p class="mt-3 text-lg font-semibold">
-              Qurans Distributed <span class="text-blue-700 font-bold">K+</span>
-            </p>
-            <p class="text-sm text-gray-600">
-              In multiple languages Australia-wide
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <a
-      href="gallery.html"
-      class="inline-block px-8 py-3 bg-white text-black rounded-full"
-    >
-      View Full Gallery →
+<!-- HEADER -->
+<header class="fixed inset-x-0 top-0 z-50 bg-white/90 backdrop-blur border-b">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-full bg-[var(--brand)] text-white font-bold flex items-center justify-center">EP</div>
+      <span class="font-semibold">ElevatePurpose</span>
     </a>
+    <nav class="hidden md:flex items-center gap-6 text-sm text-slate-700">
+      <a href="#about" class="hover:text-[var(--brand)]">About</a>
+      <a href="#impact" class="hover:text-[var(--brand)]">Impact</a>
+      <a href="#resources" class="hover:text-[var(--brand)]">Resources</a>
+      <a href="#community" class="hover:text-[var(--brand)]">Stories</a>
+      <a href="#contact" class="px-3 py-2 rounded-md bg-[var(--brand)] text-white">Become Muslim</a>
+    </nav>
+    <button id="menuBtn" class="md:hidden p-2 text-slate-700" aria-label="Open menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div id="mobileMenu" class="hidden border-t bg-white">
+    <div class="px-4 py-4 flex flex-col gap-3">
+      <a href="#about" class="py-2">About</a>
+      <a href="#impact" class="py-2">Impact</a>
+      <a href="#resources" class="py-2">Resources</a>
+      <a href="#community" class="py-2">Stories</a>
+      <a href="#contact" class="py-2 bg-[var(--brand)] text-white text-center rounded">Embrace Islam</a>
+    </div>
+  </div>
+</header>
 
-    <!-- ABOUT -->
-    <section id="about" class="py-20 bg-gray-50">
-      <div class="max-w-5xl mx-auto px-4">
-        <h3 class="text-3xl font-bold mb-8 text-center">Who We Are</h3>
+<main id="top" class="pt-20">
 
-        <div class="text-lg leading-relaxed space-y-4">
-          <p>
-            ElevatePurpose is a dawah initiative focused on helping people
-            discover Islam with clarity, compassion, and sincerity. We believe
-            Islam elevates a person — morally, spiritually, emotionally, and
-            intellectually.
-          </p>
-          <p>
-            Over the years, we’ve helped more than
-            <strong>400 people become Muslim</strong>, facilitated
-            <strong>over 40,000 Qurans</strong> across Australia, connected
-            individuals to mosques, classes, imams, and support networks, and
-            collaborated with leading Islamic organisations.
-          </p>
-          <p>
-            Our mission is simple: **knowledge that matters — from people who
-            care**.
-          </p>
-        </div>
+<!-- HERO -->
+<section class="pt-12 pb-20 bg-white text-center">
+  <div class="max-w-6xl mx-auto px-6">
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
+      Knowledge that matters.
+      <span class="text-[var(--brand)]">People who genuinely care.</span>
+    </h1>
+    <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">
+      Honest, respectful guidance to understand Islam — for seekers, the curious, and those ready to take the step.
+    </p>
+    <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+      <a href="#resources" class="px-5 py-3 bg-[var(--brand)] text-white rounded-lg font-semibold shadow-sm">Learn About Islam</a>
+      <a href="#contact" class="px-5 py-3 bg-white border border-slate-200 rounded-lg font-semibold shadow-sm">Become Muslim</a>
+      <a href="https://your-free-quran-link.com" target="_blank" class="px-5 py-3 bg-[var(--warm)] text-white rounded-lg font-semibold shadow-sm">Your Free Quran</a>
+    </div>
+    <p class="mt-6 text-sm text-slate-500">
+      Serving communities Australia-wide — free Qurans, beginner guides, local mosque introductions.
+    </p>
+  </div>
+</section>
+
+<!-- IMPACT -->
+<section id="impact" class="py-10">
+  <div class="max-w-4xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <div class="bg-white rounded-xl p-4 shadow-sm flex items-center gap-4">
+      <div>
+        <p class="text-3xl font-bold text-[var(--brand)] counter" data-target="400">0</p>
+        <p class="text-sm text-slate-600 mt-1">People accepted Islam</p>
       </div>
-    </section>
-
-    <!-- RESOURCES -->
-    <section id="resources" class="py-20 bg-white">
-      <div class="max-w-5xl mx-auto px-4">
-        <h3 class="text-3xl font-bold mb-8 text-center">
-          Resources & Learning
-        </h3>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <a
-            href="#"
-            class="bg-blue-50 p-6 rounded-xl shadow hover:bg-blue-100"
-          >
-            <h4 class="font-bold text-blue-700 mb-2">Learn About Islam</h4>
-            <p class="text-sm text-gray-700">
-              Articles, videos & beginner-friendly explanations.
-            </p>
-          </a>
-
-          <a
-            href="#"
-            class="bg-blue-50 p-6 rounded-xl shadow hover:bg-blue-100"
-          >
-            <h4 class="font-bold text-blue-700 mb-2">Free Quran (Physical)</h4>
-            <p class="text-sm text-gray-700">
-              Order a Quran delivered to your address.
-            </p>
-          </a>
-
-          <a
-            href="#"
-            class="bg-blue-50 p-6 rounded-xl shadow hover:bg-blue-100"
-          >
-            <h4 class="font-bold text-blue-700 mb-2">Quran PDFs</h4>
-            <p class="text-sm text-gray-700">
-              Download translations in multiple languages.
-            </p>
-          </a>
-        </div>
+      <div class="ml-auto text-xs text-slate-400">Across Australia</div>
+    </div>
+    <div class="bg-white rounded-xl p-4 shadow-sm flex items-center gap-4">
+      <div>
+        <p class="text-3xl font-bold text-[var(--brand)] counter" data-target="40000">0</p>
+        <p class="text-sm text-slate-600 mt-1">Qurans distributed</p>
       </div>
-    </section>
+      <div class="ml-auto text-xs text-slate-400">Multiple languages</div>
+    </div>
+  </div>
+</section>
 
-    <!-- CONTACT / SHAHADA CTA -->
-    <section id="contact" class="py-20 bg-gray-900 text-white text-center">
-      <h3 class="text-3xl font-bold mb-6">Thinking About Becoming Muslim?</h3>
-      <p class="max-w-2xl mx-auto text-gray-300 mb-8">
-        We’re here to support you with guidance, answers, and a warm community
-        to welcome you.
-      </p>
+<!-- ABOUT -->
+<section id="about" class="py-12 bg-[var(--soft)] text-center max-w-6xl mx-auto px-6">
+  <h2 class="text-2xl font-bold mb-3">Who we are</h2>
+  <p class="text-slate-700 mb-3">
+    ElevatePurpose is a grassroots dawah initiative dedicated to guiding people toward clarity, purpose and spiritual growth. We offer respectful, pressure-free support for those exploring Islam and practical follow-up for new Muslims.
+  </p>
+  <p class="text-slate-700">
+    We’ve supported <strong>400+</strong> people in taking the shahada and helped distribute <strong>40,000+</strong> Qurans across Australia through trusted partners.
+  </p>
+  <p class="mt-4 font-semibold text-[var(--brand)]">“Knowledge that matters — from people who genuinely care.”</p>
+</section>
 
-      <a
-        href="mailto:elevatepurpose@gmail.com"
-        class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow hover:bg-blue-700"
-      >
-        Contact Us
-      </a>
-    </section>
+<!-- COMMUNITY MOMENTS -->
+<section id="community" class="py-12 max-w-6xl mx-auto px-6">
+  <h3 class="text-xl font-bold text-center mb-4">Community Moments</h3>
+  <p class="text-center text-sm text-slate-500 max-w-2xl mx-auto mb-6">
+    Short clips from real moments where people found guidance, peace, and direction.
+  </p>
 
-    <!-- FOOTER -->
-    <footer class="py-6 bg-black text-gray-400 text-center text-sm">
-      © 2025 ElevatePurpose — Inspiring Hearts, Elevating Lives.
-    </footer>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="video-placeholder" data-video-url="https://www.tiktok.com/embed/7416342352521940266">
+      <img src="https://via.placeholder.com/400x225.png?text=Shahada+Sydney" alt="Shahada Sydney video thumbnail">
+      <button class="play-button">▶︎</button>
+      <div class="p-3">
+        <div class="font-semibold">Shahada — Sydney</div>
+        <div class="text-sm text-slate-500 mt-1">A quiet, heartfelt moment of acceptance.</div>
+      </div>
+    </div>
 
-    <!-- COUNTER SCRIPT -->
-    <script>
-      const counters = document.querySelectorAll(".counter");
+    <div class="video-placeholder" data-video-url="https://www.instagram.com/reel/DRYuQhDE_um/embed">
+      <img src="https://via.placeholder.com/400x225.png?text=Street+Dawah" alt="Street Dawah video thumbnail">
+      <button class="play-button">▶︎</button>
+      <div class="p-3">
+        <div class="font-semibold">Street Dawah</div>
+        <div class="text-sm text-slate-500 mt-1">A convert shares their story.</div>
+      </div>
+    </div>
 
-      counters.forEach((counter) => {
-        const update = () => {
-          const target = +counter.getAttribute("data-target");
-          const count = +counter.innerText;
-          const speed = 80;
+    <div class="video-placeholder" data-video-url="https://www.tiktok.com/embed/7535009619144379666">
+      <img src="https://via.placeholder.com/400x225.png?text=Recovery+to+Revert" alt="Recovery to Revert video thumbnail">
+      <button class="play-button">▶︎</button>
+      <div class="p-3">
+        <div class="font-semibold">Recovery to Revert</div>
+        <div class="text-sm text-slate-500 mt-1">A powerful transformation story.</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-          const inc = target / speed;
-          if (count < target) {
-            counter.innerText = Math.ceil(count + inc);
-            setTimeout(update, 20);
-          } else {
-            counter.innerText = target.toLocaleString();
-          }
-        };
+<!-- RESOURCES + FAQ -->
+<section id="resources" class="py-12 max-w-6xl mx-auto px-6">
+  <h3 class="text-2xl font-bold text-center mb-6">Resources</h3>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+    <a href="#learn" class="block bg-white rounded-lg p-5 shadow-sm hover:shadow-md">
+      <h4 class="font-semibold text-[var(--brand)] mb-1">Learn About Islam</h4>
+      <p class="text-sm text-slate-600">Short guides, videos and a beginner pathway.</p>
+    </a>
+    <a href="https://your-free-quran-link.com" target="_blank" class="block bg-white rounded-lg p-5 shadow-sm hover:shadow-md">
+      <h4 class="font-semibold text-[var(--brand)] mb-1">Free Quran (Physical)</h4>
+      <p class="text-sm text-slate-600">Request a copy delivered Australia-wide.</p>
+    </a>
+    <a href="#pdfs" class="block bg-white rounded-lg p-5 shadow-sm hover:shadow-md">
+      <h4 class="font-semibold text-[var(--brand)] mb-1">Quran PDFs</h4>
+      <p class="text-sm text-slate-600">Download translations in multiple languages.</p>
+    </a>
+  </div>
 
-        const observer = new IntersectionObserver((entries) => {
-          if (entries[0].isIntersecting) {
-            update();
-            observer.disconnect();
-          }
-        });
+  <!-- FAQ -->
+  <div class="max-w-3xl mx-auto">
+    <h4 class="text-xl font-semibold mb-4">Frequently asked questions</h4>
+    <div class="space-y-3">
+      <details class="bg-white p-4 rounded-lg shadow-sm">
+        <summary class="font-medium">How do I become Muslim?</summary>
+        <p class="mt-2 text-sm text-slate-600">You can make the declaration of faith (shahada). We guide you privately.</p>
+      </details>
+      <details class="bg-white p-4 rounded-lg shadow-sm">
+        <summary class="font-medium">Will I be judged?</summary>
+        <p class="mt-2 text-sm text-slate-600">No — we provide supportive, non-judgemental guidance and respect your privacy.</p>
+      </details>
+      <details class="bg-white p-4 rounded-lg shadow-sm">
+        <summary class="font-medium">Can I request a Quran anonymously?</summary>
+        <p class="mt-2 text-sm text-slate-600">Yes — only the required info for delivery.</p>
+      </details>
+    </div>
+  </div>
+</section>
 
-        observer.observe(counter);
-      });
-    </script>
-  </body>
+<!-- CONTACT / FORM -->
+<section id="contact" class="py-12 bg-[var(--brand)] text-white">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h3 class="text-2xl font-bold mb-3">Thinking about becoming Muslim?</h3>
+    <p class="text-sm max-w-2xl mx-auto text-white/90 mb-5">Reach out for a private, respectful conversation — we’ll support you every step of the way.</p>
+
+    <form id="contactForm" class="flex flex-col sm:flex-row gap-3 justify-center" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
+      <input type="text" name="name" placeholder="Your Name" required class="px-3 py-2 rounded-md text-slate-900">
+      <input type="email" name="email" placeholder="Your Email" required class="px-3 py-2 rounded-md text-slate-900">
+      <select name="requestType" required class="px-3 py-2 rounded-md text-slate-900">
+        <option value="">Select Request</option>
+        <option value="Become Muslim">Become Muslim</option>
+        <option value="Ask a Question">Ask a Question</option>
+        <option value="Book a Call">Book a Call</option>
+      </select>
+      <button type="submit" class="px-4 py-2 bg-white text-[var(--brand)] rounded-md font-semibold">Submit</button>
+    </form>
+
+    <p class="mt-4 text-xs text-white/80">We respond respectfully and privately — typical reply time 24–72 hours.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-6 bg-slate-900 text-white text-center text-sm">
+  &copy; 2025 ElevatePurpose. All rights reserved.
+</footer>
+
+<script>
+  // Counter animation
+  document.querySelectorAll('.counter').forEach(counter => {
+    const target = +counter.getAttribute('data-target');
+    let count = 0;
+    const step = Math.ceil(target / 200);
+    const interval = setInterval(() => {
+      count += step;
+      if(count >= target) { counter.textContent = target; clearInterval(interval); }
+      else { counter.textContent = count; }
+    }, 15);
+  });
+
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  // Lazy-load video embeds
+  document.addEventListener('click', e => {
+    const container = e.target.closest('.video-placeholder');
+    if(!container) return;
+    const url = container.getAttribute('data-video-url');
+    const iframe = document.createElement('iframe');
+    iframe.src = url+'?autoplay=1';
+    iframe.width = '100%';
+    iframe.height = '100%';
+    iframe.setAttribute('loading','lazy');
+    container.innerHTML = '';
+    container.appendChild(iframe);
+  });
+</script>
+</body>
 </html>
